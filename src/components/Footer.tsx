@@ -1,4 +1,4 @@
-import { GithubIcon, LinkedinIcon, MailIcon } from "./Icons";
+import { FacebookIcon, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, TwitterIcon } from "./Icons";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,43 +8,42 @@ function Footer() {
       <div className="footer-inner footer-grid">
         <div>
           <a href="#home" className="logo">
-            JV<span>.</span>
+            <img src="./JV.png" alt="logo" />
           </a>
+          
           <p className="muted" style={{ marginTop: 12, maxWidth: 280 }}>
             Building digital experiences with technology, creativity, and purpose.
           </p>
           <div className="social-row" style={{ marginTop: 16 }}>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <GithubIcon />
+            <a href="https://www.facebook.com/jeanson.villanueva.1" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FacebookIcon />
             </a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.instagram.com/jeansonvillanueva7/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <InstagramIcon />
+            </a>
+            <a href="https://x.com/Edi_wow_123" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <TwitterIcon />
+            </a>
+            <a href="https://www.linkedin.com/in/jeanson-villanueva-6b100028a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <LinkedinIcon />
             </a>
-            <a href="mailto:jeanson.villanueva@gmail.com" aria-label="Email">
+            <a href="https://github.com/jeansonvillanueva" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <GithubIcon />
+            </a>
+            <a href="mailto:jeansonvillanueva11@gmail.com" aria-label="Email">
               <MailIcon />
             </a>
           </div>
         </div>
         <div>
-          <h3>Navigation</h3>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#certificates">Certificates</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div>
           <h3>Services</h3>
           <a href="#skills">Web Development</a>
-          <a href="#skills">Frontend Development</a>
-          <a href="#skills">UI/UX Design</a>
-          <a href="#skills">Responsive Design</a>
+          <a href="#skills">Networking</a>
+          <a href="#skills">Information Technology</a>
         </div>
         <div>
           <h3>Contact Me</h3>
-          <a href="mailto:jeanson.villanueva@gmail.com">jeanson.villanueva@gmail.com</a>
+          <a href="mailto:jeansonvillanueva11@gmail.com">jeansonvillanueva11@gmail.com</a>
           <a href="tel:+639123456789">+63 961 715 ####</a>
           <p className="muted">Philippines</p>
           <h3 style={{ marginTop: 22 }}>Let's Connect</h3>

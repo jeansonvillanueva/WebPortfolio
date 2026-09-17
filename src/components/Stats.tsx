@@ -1,10 +1,9 @@
 import Reveal from "./Reveal";
 
 const stats = [
-  { value: "10+", label: "Projects Completed" },
-  { value: "2+", label: "Years of Experience" },
-  { value: "10+", label: "Technologies" },
-  { value: "8+", label: "Certificates Earned" },
+  { value: "3+", label: "Projects Completed" },
+  { value: "1+", label: "Years of Experience" },
+  { value: "3+", label: "Certificates Earned" },
 ];
 
 function Stats() {

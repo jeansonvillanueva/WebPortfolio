@@ -1,12 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import Reveal from "./Reveal";
 import { ArrowIcon } from "./Icons";
+import YMCAWeb from "../assets/images/ymcaweb.png";
+import OptifiWeb from "../assets/images/oftifiweb.png";
+import AlertoWebApp from "../assets/images/alertomnlwebapp.png";
 
 type Project = {
   id: string;
   title: string;
+  projectPreview: string;
   summary: string;
-  preview: string;
   tags: string[];
   overview: string;
   features: string[];
@@ -18,8 +21,8 @@ const projects: Project[] = [
   {
     id: "ymca",
     title: "YMCA Management System",
+    projectPreview: YMCAWeb,
     summary: "Web-based system for managing members, events, schedules, and announcements.",
-    preview: "preview-ymca",
     tags: ["React", "TypeScript", "Tailwind CSS", "PHP", "MySQL"],
     overview:
       "A comprehensive web-based system built for YMCA organizations to manage members, events, schedules, and announcements efficiently. It streamlines operations and enhances communication within the organization.",
@@ -35,8 +38,8 @@ const projects: Project[] = [
   {
     id: "finance-management",
     title: "Optifi",
+    projectPreview: OptifiWeb,
     summary: "Financial management system for forecasting and managing personal finances.",
-    preview: "preview-finance",
     tags: ["Python", "Meta Prophet", "PHP", "MySQL", "PostgreSQL"],
     overview:
       "A financial management system for individuals to forecast and manage their finances. Summarizes the data provided by the user and tracks some anomalies through the use of machine learning.",
@@ -46,14 +49,14 @@ const projects: Project[] = [
       "Data visualization and reporting",
       "User-friendly interface",
     ],
-    projectTeam: ["G. Loterina (Project Lead)"],
+    projectTeam: ["G. Loterina (Project Lead and Designer)"],
     demo: "#contact",
   },
   {
     id: "emergency-response",
     title: "Alerto MNL",
+    projectPreview: AlertoWebApp,
     summary: "GPS tracking system for emergency response personnel.",
-    preview: "preview-shop",
     tags: ["React", "Firebase", "Tailwind CSS"],
     overview:
       "A GPS tracking system for emergency response personnel to track their location and status. It also allows the user to send and receive messages to and from the emergency response personnel.",
@@ -64,8 +67,8 @@ const projects: Project[] = [
       "User-friendly interface",
     ],
     projectTeam: [
-      "A. Abelarde (Project Lead and Designer)",
       "R. Jimenez (Backend Developer)",
+      "A. Abelarde (Project Lead and Designer)",
       "C. Moaje (Backend Developer)",
       "A. San Jose (Documentation and Testing)",
     ],
@@ -112,7 +115,6 @@ function Projects() {
             <p className="kicker">Selected work</p>
             <h2>Featured Projects</h2>
           </div>
-          <a href="#projects">View All Projects →</a>
         </div>
       </Reveal>
 
@@ -143,19 +145,8 @@ function Projects() {
                       setActive(index);
                     }}
                   >
-                    <div className={`project-preview ${project.preview}`}>
-                      <div className="mock-window">
-                        <div className="mock-chrome">
-                          <span />
-                          <span />
-                          <span />
-                        </div>
-                        <div className="mock-bar" />
-                        <div className="mock-grid">
-                          <div className="mock-side" />
-                          <div className="mock-main" />
-                        </div>
-                      </div>
+                    <div className="project-preview">
+                      <img src={project.projectPreview} alt={`${project.title} preview`} />
                     </div>
                     <div className="project-body">
                       <h3>{project.title}</h3>
@@ -226,7 +217,9 @@ function Projects() {
               </div>
             </div>
 
-            <div className={`detail-hero ${selected.preview}`} />
+            <div className="detail-hero">
+              <img src={selected.projectPreview} alt={`${selected.title} preview`} />
+            </div>
 
             <div className="chips" style={{ marginTop: 18 }}>
               {selected.tags.map((tag) => (

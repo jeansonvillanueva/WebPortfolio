@@ -11,7 +11,7 @@ function Contact() {
     const message = String(data.get("message") ?? "");
     const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
     const body = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
-    window.location.href = `mailto:jeanson.villanueva@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:jeansonvillanueva11@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -59,7 +59,7 @@ function Contact() {
                 <MailIcon />
                 <div>
                   <p>Email</p>
-                  <strong>jeanson.villanueva@gmail.com</strong>
+                  <strong>jeansonvillanueva11@gmail.com</strong>
                 </div>
               </div>
               <div className="info-row">

@@ -10,13 +10,20 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
+function getInitialTheme(): "dark" | "light" {
+  const saved = localStorage.getItem("theme");
+  if (saved === "light" || saved === "dark") return saved;
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
 function Navbar() {
   const [active, setActive] = useState("#home");
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">(getInitialTheme);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   useEffect(() => {
@@ -42,7 +49,7 @@ function Navbar() {
     <header className="site-header">
       <nav className="nav">
         <a href="#home" className="logo">
-          JV<span>.</span>
+          <img src="./JV.png" alt="logo" />
         </a>
 
         <div className={`nav-links ${open ? "open" : ""}`}>
@@ -62,14 +69,17 @@ function Navbar() {
         </div>
 
         <div className="nav-actions">
-          <a className="resume-btn" href="#contact">
+          <a className="resume-btn"
+          href="/public/assets/Jeanson-Villanueva-Resume.pdf"
+          download="Jeanson-Villanueva-Resume.pdf"
+          >
             <DownloadIcon />
             <span>Download Resume</span>
           </a>
           <button
             className="icon-btn theme-btn"
             type="button"
-            aria-label="Toggle theme"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
           >
             {theme === "dark" ? "☾" : "☀"}

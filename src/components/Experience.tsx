@@ -1,5 +1,7 @@
 import Reveal from "./Reveal";
 import mcdo from "../assets/images/mcdo.svg";
+import spes from "../assets/images/peso.png";
+import ymca from "../assets/images/ymca.png";
 
 function Experience() {
   return (
@@ -16,17 +18,16 @@ function Experience() {
       <div className="timeline">
         <Reveal>
           <article className="exp-card">
-            <div className="ymca-mark">Y</div>
+            <div className="ymca-mark">
+              <img src={ymca} alt="Young Men's Christian Association" />
+            </div>
             <div>
               <h3>Young Men's Christian Association</h3>
-              <p className="muted">Web Developer · 2022 – 2026</p>
+              <p className="muted">Web Developer · 2026</p>
               <p className="muted" style={{ marginTop: 10 }}>
                 Developed, maintained, and updated the website and social media
                 accounts of the Young Men's Christian Association.
               </p>
-              <a href="https://ymca.ph/" target="_blank" rel="noopener noreferrer">
-                ymca.ph
-              </a>
             </div>
           </article>
         </Reveal>
@@ -50,7 +51,9 @@ function Experience() {
 
         <Reveal delay={160}>
           <article className="exp-card">
-            <div className="peso-mark">P</div>
+            <div className="peso-mark">
+              <img src={spes} alt="Public Employment Service Office (PESO) Manila" />
+            </div>
             <div>
               <h3>Public Employment Service Office (PESO) Manila</h3>
               <p className="muted">Special Program for Employment of Students · 2022</p>
