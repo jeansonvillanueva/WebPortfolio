@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Reveal from "./Reveal";
 import { ArrowIcon } from "./Icons";
+import ContributionGraph from "./ContributionGraph";
 import YMCAWeb from "../assets/images/ymcaweb.png";
 import OptifiWeb from "../assets/images/oftifiweb.png";
 import AlertoWebApp from "../assets/images/alertomnlwebapp.png";
@@ -187,6 +188,14 @@ function Projects() {
           />
         ))}
       </div>
+
+      <Reveal>
+        <div className="contrib-intro">
+          <p className="kicker">GitHub activity</p>
+          <h2>Contributions</h2>
+        </div>
+        <ContributionGraph />
+      </Reveal>
 
       {selected && (
         <div
