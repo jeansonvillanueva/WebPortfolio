@@ -42,7 +42,7 @@ function Education() {
           </div>
           <div>
             <h3>Doña Teodora Alonso High School</h3>
-            <p className="muted">Information and Communications Technology</p>
+            <p className="muted">Information and Communications Technology (ICT Strand)</p>
             <p className="muted">2020 – 2022 · With Honors</p>
           </div>
           </article>
