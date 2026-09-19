@@ -211,13 +211,19 @@ function Projects() {
           <article className="detail" onClick={(event) => event.stopPropagation()}>
             <div className="detail-top">
               <div>
-                <button type="button" className="ghost-btn" onClick={() => setOpenId(null)}>
+                <button
+                  type="button"
+                  className="ghost-btn"
+                  onClick={() => setOpenId(null)}
+                >
                   ← Back to Projects
                 </button>
+
                 <h2 id="project-title">{selected.title}</h2>
                 <span className="badge">Featured Project</span>
               </div>
-              {!selected.academicDemo && (
+
+              {selected.demo && (
                 <div className="hero-actions">
                   <a
                     className="red-btn"
@@ -234,15 +240,22 @@ function Projects() {
             <div className="detail-hero">
               {selected.academicDemo ? (
                 <div className="academic-demo">
-                  <p className="academic-demo-kicker">Project Demo — {selected.title}</p>
+                  <p className="academic-demo-kicker">
+                    Project Demo — {selected.title}
+                  </p>
+
                   <h3>Academic Research Project</h3>
+
                   <p>
                     Developed as part of the BSIT thesis/research requirements at
                     Pamantasan ng Lungsod ng Maynila.
                   </p>
                 </div>
               ) : (
-                <img src={selected.projectPreview} alt={`${selected.title} preview`} />
+                <img
+                  src={selected.projectPreview}
+                  alt={`${selected.title} preview`}
+                />
               )}
             </div>
 
