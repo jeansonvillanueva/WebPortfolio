@@ -898,6 +898,40 @@
   object-position: top center;
 }
 
+.academic-demo {
+  min-height: 240px;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  padding: 40px 28px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(239, 68, 68, 0.16), transparent 55%),
+    #0b1220;
+}
+
+.academic-demo-kicker {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.academic-demo h3 {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 1.45rem;
+}
+
+.academic-demo p:last-child {
+  margin: 0 auto;
+  max-width: 42ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .tabs {
   display: flex;
   gap: 18px;

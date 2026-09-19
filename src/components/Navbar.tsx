@@ -70,7 +70,7 @@ function Navbar() {
 
         <div className="nav-actions">
           <a className="resume-btn"
-          href="/public/assets/Jeanson-Villanueva-Resume.pdf"
+          href="/assets/Jeanson-Villanueva-Resume.pdf"
           download="Jeanson-Villanueva-Resume.pdf"
           >
             <DownloadIcon />

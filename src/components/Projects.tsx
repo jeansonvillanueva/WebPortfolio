@@ -16,6 +16,7 @@ type Project = {
   features: string[];
   projectTeam?: string[];
   demo: string;
+  academicDemo?: boolean;
 };
 
 const projects: Project[] = [
@@ -52,6 +53,7 @@ const projects: Project[] = [
     ],
     projectTeam: ["G. Loterina (Project Lead and Designer)"],
     demo: "#contact",
+    academicDemo: true,
   },
   {
     id: "emergency-response",
@@ -74,6 +76,7 @@ const projects: Project[] = [
       "A. San Jose (Documentation and Testing)",
     ],
     demo: "#contact",
+    academicDemo: true,
   },
 ];
 
@@ -214,20 +217,33 @@ function Projects() {
                 <h2 id="project-title">{selected.title}</h2>
                 <span className="badge">Featured Project</span>
               </div>
-              <div className="hero-actions">
-                <a
-                  className="red-btn"
-                  href={selected.demo}
-                  target={selected.demo.startsWith("http") ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                >
-                  Live Demo
-                </a>
-              </div>
+              {!selected.academicDemo && (
+                <div className="hero-actions">
+                  <a
+                    className="red-btn"
+                    href={selected.demo}
+                    target={selected.demo.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                  </a>
+                </div>
+              )}
             </div>
 
             <div className="detail-hero">
-              <img src={selected.projectPreview} alt={`${selected.title} preview`} />
+              {selected.academicDemo ? (
+                <div className="academic-demo">
+                  <p className="academic-demo-kicker">Project Demo — {selected.title}</p>
+                  <h3>Academic Research Project</h3>
+                  <p>
+                    Developed as part of the BSIT thesis/research requirements at
+                    Pamantasan ng Lungsod ng Maynila.
+                  </p>
+                </div>
+              ) : (
+                <img src={selected.projectPreview} alt={`${selected.title} preview`} />
+              )}
             </div>
 
             <div className="chips" style={{ marginTop: 18 }}>
