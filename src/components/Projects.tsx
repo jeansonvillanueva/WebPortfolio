@@ -39,7 +39,7 @@ const projects: Project[] = [
   },
   {
     id: "finance-management",
-    title: "Optifi",
+    title: "Optifi: A data intelligent financial tracking through OCR and AI-driven budget forecasting",
     projectPreview: OptifiWeb,
     summary: "Financial management system for forecasting and managing personal finances.",
     tags: ["Python", "Meta Prophet", "PHP", "MySQL", "PostgreSQL"],
@@ -52,12 +52,12 @@ const projects: Project[] = [
       "User-friendly interface",
     ],
     projectTeam: ["G. Loterina (Project Lead and Designer)"],
-    demo: "#contact",
+    demo: "https://plm-library.pinnacle.edu.ph/cgi-bin/koha/opac-detail.pl?biblionumber=39712",
     academicDemo: true,
   },
   {
     id: "emergency-response",
-    title: "Alerto MNL",
+    title: "ALERTO MNL: Crime Mapping & SOS Response System for Safer Manila City",
     projectPreview: AlertoWebApp,
     summary: "GPS tracking system for emergency response personnel.",
     tags: ["React", "Firebase", "Tailwind CSS"],
@@ -75,7 +75,7 @@ const projects: Project[] = [
       "C. Moaje (Backend Developer)",
       "A. San Jose (Documentation and Testing)",
     ],
-    demo: "#contact",
+    demo: "https://www.studocu.com/ph/document/pamantasan-ng-lungsod-ng-maynila/methods-of-research/alerto-mnl-crime-mapping-sos-response-system-for-safer-manila-city/133738319?sid=01c6869b-9e81-4e53-825d-48178cd14d681789829879",
     academicDemo: true,
   },
 ];
