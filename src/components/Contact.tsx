@@ -25,6 +25,30 @@ function Contact() {
         </div>
       </Reveal>
       <div className="contact-layout">
+        <Reveal>
+          <form className="contact-box contact-form" onSubmit={onSubmit}>
+            <label>
+              Name
+              <input name="name" type="text" required placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" required placeholder="you@email.com" />
+            </label>
+            <label>
+              Message
+              <textarea
+                name="message"
+                required
+                rows={5}
+                placeholder="Tell me about the project or opportunity."
+              />
+            </label>
+            <button className="primary-btn" type="submit">
+              Send Message
+            </button>
+          </form>
+        </Reveal>
         <div className="contact-side">
           <Reveal delay={60}>
             <article className="contact-box">
