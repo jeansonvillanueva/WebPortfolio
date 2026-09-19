@@ -32,9 +32,9 @@ function Religion() {
             </div>
             <div>
               <h3>La Loma Baptist Institute</h3>
-              <p className="muted">Student · 2020 - 2024</p>
+              <p className="muted">Graduate of Theology · 2020 - 2024</p>
               <p className="muted" style={{ marginTop: 10 }}>
-                Studied at La Loma Baptist Institute for 4 years.
+                Studied at La Loma Baptist Institute for three years using the Baptist Asian Missions Association (BAMA) Curriculum under the ministry of La Loma Baptist Church.
               </p>
             </div>
           </article>
