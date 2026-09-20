@@ -774,6 +774,12 @@
   margin-bottom: 8px;
 }
 
+.cert-link {
+  margin-top: 14px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
 .muted {
   color: var(--muted);
   line-height: 1.65;

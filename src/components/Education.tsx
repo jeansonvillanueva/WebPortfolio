@@ -1,14 +1,36 @@
 import Reveal from "./Reveal";
+import { ArrowIcon } from "./Icons";
 import plm from "../assets/images/plm.png";
 import dtahs from "../assets/images/dtahs.png";
 import fbes from "../assets/images/fbes.png";
 
+const certificateFiles = import.meta.glob("../assets/documents/*", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
 
 const certificates = [
   { title: "CS207: Fundamentals of Machine Learning", org: "Coursera" },
   { title: "CS302: Software Engineering", org: "Coursera" },
   { title: "Computer System Servicing NC II", org: "TESDA" },
 ];
+
+function normalize(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function findCertificateUrl(title: string) {
+  const needle = normalize(title);
+  for (const [path, url] of Object.entries(certificateFiles)) {
+    const fileName = path.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "";
+    const haystack = normalize(fileName);
+    if (haystack && (needle.includes(haystack) || haystack.includes(needle))) {
+      return url;
+    }
+  }
+  return undefined;
+}
 
 function Education() {
   return (
@@ -60,15 +82,29 @@ function Education() {
       </div>
 
       <div className="cards" style={{ marginTop: 18 }}>
-        {certificates.map((cert, index) => (
-          <Reveal key={cert.title} delay={index * 60}>
-            <article className="edu-card">
-              <p className="muted">Certificate of Completion</p>
-              <h3>{cert.title}</h3>
-              <p className="muted">{cert.org}</p>
-            </article>
-          </Reveal>
-        ))}
+        {certificates.map((cert, index) => {
+          const fileUrl = findCertificateUrl(cert.title);
+          return (
+            <Reveal key={cert.title} delay={index * 60}>
+              <article className="edu-card">
+                <p className="muted">Certificate of Completion</p>
+                <h3>{cert.title}</h3>
+                <p className="muted">{cert.org}</p>
+                {fileUrl ? (
+                  <a
+                    className="ghost-btn cert-link"
+                    href={fileUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate
+                    <ArrowIcon />
+                  </a>
+                ) : null}
+              </article>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );

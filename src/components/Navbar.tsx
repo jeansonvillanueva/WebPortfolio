@@ -27,22 +27,45 @@ function Navbar() {
   }, [theme]);
 
   useEffect(() => {
-    const sections = links
-      .map((link) => document.querySelector(link.href))
-      .filter((el): el is Element => Boolean(el));
+    const sectionIds = links.map((link) => link.href.slice(1));
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) setActive(`#${visible.target.id}`);
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: [0.15, 0.4, 0.7] },
-    );
+    const syncActive = () => {
+      const header = document.querySelector(".site-header");
+      const offset = (header instanceof HTMLElement ? header.offsetHeight : 78) + 12;
+      let current = sectionIds[0];
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+      for (const id of sectionIds) {
+        const section = document.getElementById(id);
+        if (!section) continue;
+        if (section.getBoundingClientRect().top <= offset + 2) current = id;
+      }
+
+      const doc = document.documentElement;
+      const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 4;
+      if (atBottom) current = sectionIds[sectionIds.length - 1];
+
+      setActive(`#${current}`);
+    };
+
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        syncActive();
+      });
+    };
+
+    syncActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    window.addEventListener("hashchange", syncActive);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("hashchange", syncActive);
+    };
   }, []);
 
   return (
