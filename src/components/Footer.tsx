@@ -24,7 +24,7 @@ function Footer() {
             <a href="https://x.com/Edi_wow_123" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <TwitterIcon />
             </a>
-            <a href="https://www.linkedin.com/in/jeanson-villanueva-6b100028a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/jeanson-villanueva-95924732a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <LinkedinIcon />
             </a>
             <a href="https://github.com/jeansonvillanueva" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
