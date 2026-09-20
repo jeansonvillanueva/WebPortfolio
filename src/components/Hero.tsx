@@ -38,7 +38,7 @@ function Hero() {
           <a href="https://github.com/jeansonvillanueva" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <GithubIcon size={18} />
           </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/jeanson-villanueva-95924732a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <LinkedinIcon size={18} />
           </a>
           <a href="mailto:jeansonvillanueva11@gmail.com" aria-label="Email">
