@@ -51,8 +51,8 @@ function Hero() {
         <div className="portrait-wrap">
           <div className="portrait-frame">
             <img className="portrait-photo" src={profile} alt="Jeanson Villanueva" />
-            <div className="available">
-              <i /> Available for work
+            <div className="employed">
+              <i />Currently employed
             </div>
           </div>
           <div className="info-card">
