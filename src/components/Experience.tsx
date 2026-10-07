@@ -20,13 +20,13 @@ function Experience() {
       <Reveal>
           <article className="exp-card">
             <div className="ymca-mark">
-              <img src={sagility} alt="Sagility" />
+              <img src={sagility} alt="Sagility" onClick={() => window.open("https://sagility.com/", "_blank")} />
             </div>
             <div>
               <h3>Sagility</h3>
               <p className="muted">CSR Associate · October 2026 - Present</p>
               <p className="muted" style={{ marginTop: 10 }}>
-                Under traing to provide better customer service to the clients of the specific company assigned.
+                Under traing to provide better customer service to the clients of the specific Line of Business.
               </p>
             </div>
           </article>
@@ -35,7 +35,8 @@ function Experience() {
         <Reveal delay={80}>
           <article className="exp-card">
             <div className="exp-logo">
-              <img src={mcdo} alt="McDonald's" />
+              <img src={mcdo} alt="McDonald's"  onClick={() => window.open("https://www.mcdonalds.com.ph/", "_blank")} />
+
             </div>
             <div>
               <h3>McDonald's Philippines</h3>
@@ -52,7 +53,7 @@ function Experience() {
         <Reveal>
           <article className="exp-card">
             <div className="ymca-mark">
-              <img src={ymca} alt="Young Men's Christian Association" />
+              <img src={ymca} alt="Young Men's Christian Association"  onClick={() => window.open("https://ymca.ph/", "_blank")} />
             </div>
             <div>
               <h3>Young Men's Christian Association</h3>
