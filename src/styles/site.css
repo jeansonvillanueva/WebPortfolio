@@ -287,6 +287,18 @@
   animation: pulse 1.8s ease-out infinite;
 }
 
+.available-employed {
+  background: rgba(34, 197, 94, 0.35);
+  color: var(--green);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .info-card {
   position: relative;
   background: var(--card);
