@@ -32,22 +32,6 @@ function Experience() {
           </article>
         </Reveal>
 
-        <Reveal>
-          <article className="exp-card">
-            <div className="ymca-mark">
-              <img src={ymca} alt="Young Men's Christian Association" />
-            </div>
-            <div>
-              <h3>Young Men's Christian Association</h3>
-              <p className="muted">Web Developer · July 2026 - September 2026</p>
-              <p className="muted" style={{ marginTop: 10 }}>
-                Developed, maintained, and updated the website and social media
-                accounts of the Young Men's Christian Association.
-              </p>
-            </div>
-          </article>
-        </Reveal>
-
         <Reveal delay={80}>
           <article className="exp-card">
             <div className="exp-logo">
@@ -60,6 +44,22 @@ function Experience() {
                 Provided customer service and assisted with food and drink
                 preparation. Recognized as Employee of the Month for November 2025
                 and February 2026.
+              </p>
+            </div>
+          </article>
+        </Reveal>
+
+        <Reveal>
+          <article className="exp-card">
+            <div className="ymca-mark">
+              <img src={ymca} alt="Young Men's Christian Association" />
+            </div>
+            <div>
+              <h3>Young Men's Christian Association</h3>
+              <p className="muted">Web Developer · July 2026 - September 2026</p>
+              <p className="muted" style={{ marginTop: 10 }}>
+                Developed, maintained, and updated the website and social media
+                accounts of the Young Men's Christian Association.
               </p>
             </div>
           </article>
